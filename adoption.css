@@ -1,0 +1,661 @@
+/* ===== 領養頁調整入口 ===== */
+.adoption-page {
+  --story-panel-height: 65svh;
+  --house-cream: #fff9e9;
+  --adoption-orange: #f87808;
+  min-height: 0;
+  background-color: #ffe492;
+  color: var(--brown);
+}
+
+.adoption-page nav [aria-current] {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: white;
+  text-decoration: none;
+}
+
+.adoption-page main {
+  padding-top: 100px;
+}
+
+.adoption-page h1,
+.adoption-page h2 {
+  font-weight: 450;
+}
+
+/* ===== 段落範圍內固定的屋子：請勿替父層加入 overflow:hidden ===== */
+.adoption-story {
+  position: relative;
+  isolation: isolate;
+}
+
+.house-backdrop {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  margin-bottom: -100svh;
+  z-index: -1;
+  pointer-events: none;
+  background: #ffe492;
+}
+
+.house-block {
+  position: absolute;
+  inset: 25px 0 0;
+  background: var(--house-cream);
+  clip-path: polygon(
+    0 22%,
+    7% 16%,
+    11% 19%,
+    34% 2%,
+    54% 14%,
+    66% 5%,
+    93% 25%,
+    100% 20%,
+    100% 100%,
+    0 100%
+  );
+}
+
+.house-block::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("assets/background.png") center top / 100% auto;
+  mix-blend-mode: multiply;
+  opacity: 0.28;
+}
+
+.story-content {
+  position: relative;
+}
+
+.adoption-intro {
+  text-align: center;
+  min-height: auto;
+  padding: 130px 25px 20px;
+}
+
+.eyebrow {
+  color: #be721d;
+  font:
+    19px Candy,
+    sans-serif;
+  letter-spacing: 4px;
+}
+
+.adoption-intro h1 {
+  font-size: clamp(55px, 7vw, 95px);
+  letter-spacing: 9px;
+  margin: 15px 0 25px;
+}
+
+.adoption-intro h1::after {
+  width: 50px;
+}
+
+.adoption-intro > p:last-of-type {
+  font-size: clamp(20px, 2.3vw, 29px);
+  letter-spacing: 2px;
+}
+
+.scroll-cue {
+  display: inline-block;
+  margin-top: 30px;
+  color: #9a642e;
+  font-size: 16px;
+}
+
+/* ===== 每組圖文約一個畫面高 ===== */
+.adoption-panel {
+  min-height: var(--story-panel-height);
+  max-width: 1240px;
+  margin: auto;
+  padding: 30px 45px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 45px;
+}
+
+.panel-visual img {
+  display: block;
+  width: 100%;
+}
+
+.panel-copy h2 {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  font-size: clamp(28px, 3vw, 40px);
+  margin: 0 0 35px;
+}
+
+.panel-copy h2 > span {
+  color: var(--adoption-orange);
+  font:
+    64px Candy,
+    sans-serif;
+}
+
+.readiness {
+  list-style: none;
+  padding: 0;
+  margin-left: 85px;
+}
+
+.readiness li {
+  font-size: 26px;
+  line-height: 2;
+}
+
+.readiness li::before {
+  content: "✓";
+  color: var(--adoption-orange);
+  display: inline-grid;
+  place-items: center;
+  width: 24px;
+  height: 25px;
+  line-height: 1;
+  border: 2px solid currentColor;
+  border-radius: 3px;
+  margin-right: 22px;
+  font-size: 22px;
+}
+
+.icon-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 15px;
+  padding: 0;
+}
+
+.icon-list li {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 13px;
+  text-align: center;
+  font-size: 19px;
+}
+
+.round-icon {
+  width: 85px;
+  height: 85px;
+  border-radius: 50%;
+  background: #ffead0;
+  color: var(--adoption-orange);
+  display: grid;
+  place-items: center;
+}
+
+.round-icon svg {
+  width: 55px;
+  height: 55px;
+}
+
+.steps li:not(:last-child)::after {
+  content: "→";
+  position: absolute;
+  right: -17px;
+  top: 28px;
+  color: var(--adoption-orange);
+  font-size: 25px;
+}
+
+/* JavaScript 可用才啟動進出場，停用 JS 仍可閱讀全部內容。 */
+.adoption-page.motion-ready .panel-visual,
+.adoption-page.motion-ready .panel-copy {
+  opacity: var(--panel-opacity, 1);
+  transform: translateY(var(--panel-offset, 0px));
+  will-change: opacity, transform;
+}
+
+/* ===== 離開屋子段落後的領養入口 ===== */
+.adoption-action {
+  padding: 75px 5% 55px;
+  background: #fff9e9;
+  position: relative;
+}
+
+.adopt-button {
+  max-width: 1180px;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  padding: 15px 25px 0 45px;
+  min-height: 230px;
+  border: 3px solid #64452e;
+  border-radius: 125px;
+  text-decoration: none;
+  background: #fff9e9;
+  box-shadow: 7px 13px 0 #f9dfbb;
+  color: var(--adoption-orange);
+  transition: box-shadow 0.25s;
+  overflow: hidden;
+}
+
+.adopt-button:hover {
+  box-shadow: 9px 17px 0 #f6ce98;
+}
+
+.adopt-label {
+  flex: 0 0 43%;
+  text-align: center;
+}
+
+.adopt-label strong {
+  display: block;
+  font-size: clamp(32px, 4.5vw, 60px);
+  font-weight: 450;
+  white-space: nowrap;
+}
+
+.adopt-label > span {
+  display: block;
+  font-size: 21px;
+  color: var(--brown);
+  margin-top: 10px;
+}
+
+.walk-scene {
+  width: 57%;
+  display: block;
+  align-self: flex-end;
+}
+
+.adoption-notice {
+  max-width: 900px;
+  margin: 35px auto 0;
+  text-align: center;
+}
+
+.adoption-notice summary {
+  cursor: pointer;
+  list-style: none;
+  font-size: 20px;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+.adoption-notice summary::-webkit-details-marker {
+  display: none;
+}
+
+.adoption-notice > div {
+  padding: 20px 25px;
+  background: #fff1d8;
+  border-radius: 20px;
+  text-align: left;
+  line-height: 1.9;
+}
+
+.adoption-page footer {
+  margin-top: 0;
+}
+
+/* ===== 散步動畫獨立循環，不依賴捲動 ===== */
+.walking-party {
+  animation: go-home 9s ease-in-out infinite;
+}
+
+.walker-person {
+  animation: person-bob 0.7s ease-in-out infinite;
+}
+
+.person-leg {
+  transform-origin: 143px 135px;
+  animation: person-step 0.7s ease-in-out infinite alternate;
+}
+
+.person-leg.leg-b {
+  animation-delay: -0.7s;
+}
+
+.walking-dog {
+  animation: dog-bob 0.35s ease-in-out infinite;
+}
+
+.dog-leg {
+  transform-origin: 298px 166px;
+  animation: dog-step 0.35s ease-in-out infinite alternate;
+}
+
+.dog-leg-b {
+  animation-delay: -0.35s;
+}
+
+.walking-tail {
+  transform-origin: 268px 161px;
+  animation: tail-wag 0.22s ease-in-out infinite alternate;
+}
+
+.walking-leash {
+  animation: leash-sway 0.7s ease-in-out infinite alternate;
+  transform-origin: 201px 121px;
+}
+
+@keyframes go-home {
+  0%,
+  100% {
+    transform: translateX(-25px);
+  }
+
+  75%,
+  90% {
+    transform: translateX(65px);
+  }
+}
+
+@keyframes person-step {
+  from {
+    transform: rotate(-19deg);
+  }
+
+  to {
+    transform: rotate(19deg);
+  }
+}
+
+@keyframes dog-step {
+  from {
+    transform: rotate(-10deg);
+  }
+
+  to {
+    transform: rotate(10deg);
+  }
+}
+
+@keyframes person-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes dog-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-1px);
+  }
+}
+
+@keyframes tail-wag {
+  from {
+    transform: rotate(-13deg);
+  }
+
+  to {
+    transform: rotate(13deg);
+  }
+}
+
+@keyframes leash-sway {
+  from {
+    transform: scaleY(0.98);
+  }
+
+  to {
+    transform: scaleY(1.02);
+  }
+}
+
+/* ===== 平板與手機 ===== */
+@media (max-width: 900px) {
+  .adoption-panel {
+    padding: 30px;
+    gap: 20px;
+  }
+
+  .panel-copy h2 {
+    font-size: 27px;
+    gap: 12px;
+  }
+
+  .panel-copy h2 > span {
+    font-size: 48px;
+  }
+
+  .readiness {
+    margin-left: 25px;
+  }
+
+  .readiness li {
+    font-size: 23px;
+  }
+
+  .round-icon {
+    width: 65px;
+    height: 65px;
+  }
+
+  .round-icon svg {
+    width: 44px;
+    height: 44px;
+  }
+
+  .icon-list {
+    gap: 9px;
+  }
+
+  .icon-list li {
+    font-size: 16px;
+  }
+
+  .steps li:not(:last-child)::after {
+    right: -12px;
+    top: 21px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 650px) {
+  .adoption-page main {
+    padding-top: 135px;
+  }
+
+  .adoption-intro {
+    min-height: auto;
+    padding-top: 120px;
+  }
+
+  .adoption-intro h1 {
+    font-size: 55px;
+    letter-spacing: 4px;
+  }
+
+  .adoption-panel {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 30px 25px;
+    align-content: center;
+  }
+
+  .panel-visual {
+    width: 85%;
+    max-width: 370px;
+    margin: auto;
+  }
+
+  .panel-copy {
+    max-width: 460px;
+    width: 100%;
+    margin: auto;
+  }
+
+  .panel-copy h2 {
+    justify-content: center;
+    font-size: 26px;
+    margin-bottom: 20px;
+  }
+
+  .readiness {
+    width: fit-content;
+    margin: auto;
+  }
+
+  .readiness li {
+    font-size: 22px;
+  }
+
+  .icon-list {
+    gap: 12px;
+  }
+
+  .round-icon {
+    width: 65px;
+    height: 65px;
+  }
+
+  .adopt-button {
+    flex-direction: column;
+    border-radius: 55px;
+    padding: 25px 20px 0;
+  }
+
+  .adopt-label {
+    width: 100%;
+  }
+
+  .adopt-label strong {
+    font-size: 43px;
+  }
+
+  .adopt-label > span {
+    font-size: 18px;
+  }
+
+  .walk-scene {
+    width: 100%;
+    max-width: 480px;
+    align-self: center;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .adoption-page.motion-ready .panel-visual,
+  .adoption-page.motion-ready .panel-copy {
+    opacity: 1;
+    transform: none;
+    will-change: auto;
+  }
+}
+
+/* 第一組靠近領養資訊標題；保留其餘組的捲動空間。 */
+.adoption-page .adoption-panel:first-of-type {
+  min-height: auto;
+  padding-top: 20px;
+}
+
+/* 保留原本領養入口的外觀 */
+button.adopt-button {
+  width: 100%;
+  font-family: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+/* 聯絡表單視窗 */
+#adoption-form-dialog {
+  position: relative;
+  width: 560px;
+  max-width: 92vw;
+  max-height: 88vh;
+  padding: 35px;
+  overflow-y: auto;
+
+  border: 2px solid #64452e;
+  border-radius: 28px;
+  background: #fff9e9;
+  color: var(--brown);
+}
+
+#adoption-form-dialog::backdrop {
+  background: rgb(48 24 0 / 45%);
+}
+
+#adoption-form-dialog h2 {
+  margin: 0 35px 12px 0;
+  font-size: 32px;
+}
+
+#adoption-form-dialog > p {
+  line-height: 1.7;
+}
+
+#adoption-form-dialog .form-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--brown);
+  font-size: 30px;
+}
+
+#adoption-contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+#adoption-contact-form label {
+  margin-top: 8px;
+  font-size: 18px;
+}
+
+#adoption-contact-form input,
+#adoption-contact-form select,
+#adoption-contact-form textarea {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 12px 14px;
+
+  border: 1px solid #d5b58a;
+  border-radius: 12px;
+  background: #fffdf6;
+  color: var(--brown);
+  font: inherit;
+}
+
+#adoption-contact-form textarea {
+  resize: vertical;
+}
+
+#adoption-contact-form .form-note {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #846b50;
+}
+
+#adoption-contact-form .form-submit {
+  align-self: flex-end;
+  padding: 12px 25px;
+  border: 0;
+  border-radius: 30px;
+  background: var(--orange);
+  color: white;
+  font-size: 20px;
+}
+
+#adoption-form-result {
+  margin: 5px 0 0;
+  line-height: 1.6;
+}

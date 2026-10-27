@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>認識狗狗｜狗等了</title>
+    <!-- 共用樣式 -->
+    <link href="style.css" rel="stylesheet" />
+    <!-- 認識狗狗頁面樣式 -->
+    <link href="dogs.css" rel="stylesheet" />
+    <!-- 認識狗狗頁面互動 -->
+    <script defer="" src="dogs.js"></script>
+    <style>
+      /* 頁碼固定在資料夾底部 */
+      .dogs-page .folder {
+        position: relative !important;
+        padding-bottom: 120px !important;
+      }
+
+      .dogs-page .page-bottom {
+        position: absolute !important;
+        bottom: 50px !important;
+        left: 6% !important;
+        right: 6% !important;
+        margin: 0 !important;
+
+        display: flex !important;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* 彈出卡片右下角的領養按鈕 */
+      #dog-details .dog-adopt-actions {
+        display: flex !important;
+        justify-content: flex-end !important;
+        margin-top: 20px;
+      }
+
+      #dog-details .dog-adopt-button {
+        display: inline-block;
+        background: #f56a00 !important;
+        color: white !important;
+        padding: 12px 22px;
+        border-radius: 30px;
+        text-decoration: none !important;
+        font-size: 20px;
+      }
+    </style>
+  </head>
+  <body class="dogs-page">
+    <!-- 頂部導覽列 -->
+    <header class="header">
+      <a aria-label="狗等了首頁" class="brand" href="index.html">
+        <img alt="狗等了" src="assets/logo.png" />
+      </a>
+      <nav aria-label="主選單">
+        <a class="english" href="index.html"> home </a>
+        <a aria-current="page" href="dogs.html"> 認識狗狗 </a>
+        <a href="volunteer.html"> 我要當志工 </a>
+        <a data-tail="adoption" href="adoption.html"> 領養資訊 </a>
+      </nav>
+    </header>
+    <!-- 頁面主要內容 -->
+    <main>
+      <!-- 頁面標題 -->
+      <section class="dogs-heading">
+        <h1>認識狗狗</h1>
+        <p>每一份小檔案，都在等一個家的回應。</p>
+      </section>
+      <!-- 資料夾與狗狗卡片 -->
+      <section aria-label="狗狗檔案" class="folder" style="padding-top: 180px">
+        <h2>
+          狗狗檔案
+          <span aria-hidden="true"> 🐾 </span>
+        </h2>
+        <!-- 個性篩選按鈕 -->
+        <div aria-label="依個性篩選狗狗" class="filters" role="group">
+          <button aria-pressed="true" data-filter="全部" type="button">
+            全部
+          </button>
+          <button aria-pressed="false" data-filter="親人" type="button">
+            親人
+          </button>
+          <button aria-pressed="false" data-filter="活潑" type="button">
+            活潑
+          </button>
+          <button aria-pressed="false" data-filter="慢熟" type="button">
+            慢熟
+          </button>
+          <button aria-pressed="false" data-filter="喜歡散步" type="button">
+            喜歡散步
+          </button>
+        </div>
+        <!-- 篩選結果提示：提供螢幕閱讀器使用 -->
+        <p aria-live="polite" class="sr-only" id="results"></p>
+        <!-- 狗狗卡片由 dogs.js 產生 -->
+        <div class="dog-grid" id="dog-grid"></div>
+        <!-- 頁碼與備註 -->
+        <div class="page-bottom">
+          <span aria-label="第 1 頁" class="page-number"> 1 </span>
+          <small> </small>
+        </div>
+      </section>
+    </main>
+    <!-- 頁尾聯絡資訊 -->
+    <footer>
+      <div class="contact-heading" style="background: transparent">
+        <span class="english"> CONTACT </span>
+        <span> 聯絡我們 </span>
+      </div>
+      <img
+        alt="鑽進洞裡的可愛狗狗"
+        class="footer-dog"
+        src="assets/footer-dog.png"
+      />
+      <div aria-label="社群聯絡方式" class="socials">
+        <button data-page="Facebook 連結">ⓕ Facebook</button>
+        <button data-page="Instagram 連結">◎ Instagram</button>
+        <button data-page="LINE 連結">LINE</button>
+        <button data-page="Email 地址">✉ Email</button>
+      </div>
+    </footer>
+    <!-- 狗狗介紹視窗 -->
+    <dialog aria-labelledby="dialog-title" id="dog-dialog">
+      <button aria-label="關閉介紹" class="dialog-close">×</button>
+      <!-- 介紹內容由 dogs.js 產生 -->
+      <div id="dog-details"></div>
+    </dialog>
+    <!-- 尚未設定連結的提示視窗 -->
+    <dialog id="notice">
+      <p id="notice-text"></p>
+      <button id="close-notice">知道了</button>
+    </dialog>
+  </body>
+</html>

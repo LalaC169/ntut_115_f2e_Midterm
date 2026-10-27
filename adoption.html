@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>領養資訊｜狗等了</title>
+    <link href="style.css" rel="stylesheet" />
+    <link href="adoption.css" rel="stylesheet" />
+    <script defer="" src="adoption.js"></script>
+    <style>
+      /* 取消每組最低高度，縮短上下留白 */
+      .adoption-page .adoption-panel {
+        min-height: auto !important;
+        padding-top: 80px !important;
+        padding-bottom: 80px !important;
+      }
+    </style>
+  </head>
+  <body class="adoption-page">
+    <header class="header">
+      <a aria-label="狗等了首頁" class="brand" href="index.html">
+        <img alt="狗等了" src="assets/logo.png" />
+      </a>
+      <nav aria-label="主選單">
+        <a class="english" href="index.html"> home </a>
+        <a href="dogs.html"> 認識狗狗 </a>
+        <a href="volunteer.html"> 我要當志工 </a>
+        <a aria-current="page" data-tail="adoption" href="adoption.html">
+          領養資訊
+        </a>
+      </nav>
+    </header>
+    <main>
+      <!-- 背景只在這個段落內 sticky，結束後隨段落離開。 -->
+      <section aria-label="領養前的三件事" class="adoption-story">
+        <div aria-hidden="true" class="house-backdrop">
+          <div class="house-block"></div>
+        </div>
+        <div class="story-content">
+          <header class="adoption-intro">
+            <p class="eyebrow">LET’S GO HOME</p>
+            <h1>領養資訊</h1>
+            <p>給牠一個家，讓等待有個答案。</p>
+            <span aria-hidden="true" class="scroll-cue"> </span>
+          </header>
+          <article aria-labelledby="adoption-title-01" class="adoption-panel">
+            <div class="panel-visual">
+              <img alt="領養人陪伴狗狗" src="assets/adoption-1.png" />
+            </div>
+            <div class="panel-copy">
+              <h2 id="adoption-title-01">
+                <span> 01 </span>
+                領養前，想一想
+              </h2>
+              <ul class="readiness">
+                <li>有時間陪伴</li>
+                <li>家人都同意</li>
+                <li>有合適空間</li>
+                <li>能負擔照顧</li>
+              </ul>
+            </div>
+          </article>
+          <article aria-labelledby="adoption-title-02" class="adoption-panel">
+            <div class="panel-visual">
+              <img alt="領養人填寫資料與狗狗互動" src="assets/adoption-2.png" />
+            </div>
+            <div class="panel-copy">
+              <h2 id="adoption-title-02">
+                <span> 02 </span>
+                帶牠回家的步驟
+              </h2>
+              <ol class="icon-list steps">
+                <li>
+                  <span class="round-icon">
+                    <svg
+                      aria-hidden="true"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="3"
+                      viewbox="0 0 60 60"
+                    >
+                      <path
+                        d="M14 25 L10 13 L21 17 Q30 11 39 17 L50 13 L46 29 Q49 44 30 49 Q12 45 14 25Z"
+                      ></path>
+                      <circle cx="23" cy="29" r="1"></circle>
+                      <circle cx="37" cy="29" r="1"></circle>
+                      <path d="M27 37 L33 37 L30 41Z M30 41 L30 44"></path>
+                    </svg>
+                  </span>
+                  <span> 認識狗狗 </span>
+                </li>
+                <li>
+                  <span class="round-icon">
+                    <svg
+                      aria-hidden="true"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="3"
+                      viewbox="0 0 60 60"
+                    >
+                      <path
+                        d="M18 9 L36 9 L46 20 L46 51 L18 51Z M36 9 L36 21 L46 21 M24 29 L39 29 M24 36 L39 36 M24 43 L35 43"
+                      ></path>
+                    </svg>
+                  </span>
+                  <span> 申請評估 </span>
+                </li>
+                <li>
+                  <span class="round-icon">
+                    <svg
+                      aria-hidden="true"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="3"
+                      viewbox="0 0 60 60"
+                    >
+                      <path
+                        d="M30 49 C-5 25 14 7 30 22 C46 7 65 25 30 49Z"
+                      ></path>
+                    </svg>
+                  </span>
+                  <span> 見面互動 </span>
+                </li>
+                <li>
+                  <span class="round-icon">
+                    <svg
+                      aria-hidden="true"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="3"
+                      viewbox="0 0 60 60"
+                    >
+                      <path
+                        d="M7 28 L30 9 L53 28 M14 24 L14 51 L26 51 L26 36 L36 36 L36 51 L46 51 L46 24"
+                      ></path>
+                    </svg>
+                  </span>
+                  <span> 準備回家 </span>
+                </li>
+              </ol>
+            </div>
+          </article>
+          <article aria-labelledby="adoption-title-03" class="adoption-panel">
+            <div class="panel-visual">
+              <img alt="為狗狗準備睡窩及用品" src="assets/adoption-3.png" />
+            </div>
+            <div class="panel-copy">
+              <h2 id="adoption-title-03">
+                <span> 03 </span>
+                準備迎接新家人
+              </h2>
+              <ul class="icon-list">
+                <li>
+                  <span class="round-icon">
+                    <svg
+                      aria-hidden="true"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="3"
+                      viewbox="0 0 60 60"
+                    >
+                      <ellipse cx="30" cy="24" rx="18" ry="7"></ellipse>
+                      <path
+                        d="M12 24 L7 47 Q30 55 53 47 L48 24 M19 25 Q30 30 42 25"
+                      ></path>
+                    </svg>
+                  </span>
+                  <span> 飲食用品 </span>
+                </li>
+                <li>
+                  <span class="round-icon">
+                    <svg
+                      aria-hidden="true"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="3"
+                      viewbox="0 0 60 60"
+                    >
+                      <path
+                        d="M19 48 Q9 7 29 9 Q47 9 35 43 Q27 60 42 50 M23 44 Q16 14 29 15 Q38 17 29 39"
+                      ></path>
+                    </svg>
+                  </span>
+                  <span> 牽繩胸背 </span>
+                </li>
+                <li>
+                  <span class="round-icon">
+                    <svg
+                      aria-hidden="true"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="3"
+                      viewbox="0 0 60 60"
+                    >
+                      <ellipse cx="30" cy="29" rx="24" ry="10"></ellipse>
+                      <path d="M6 29 L9 45 Q30 57 51 45 L54 29"></path>
+                    </svg>
+                  </span>
+                  <span> 舒服睡窩 </span>
+                </li>
+                <li>
+                  <span class="round-icon">
+                    <svg
+                      aria-hidden="true"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="3"
+                      viewbox="0 0 60 60"
+                    >
+                      <path
+                        d="M7 28 L30 9 L53 28 M14 24 L14 51 L26 51 L26 36 L36 36 L36 51 L46 51 L46 24"
+                      ></path>
+                    </svg>
+                  </span>
+                  <span> 安全空間 </span>
+                </li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </section>
+      <section aria-label="一起回家" class="adoption-action">
+        <button
+          class="adopt-button"
+          id="open-adoption-form"
+          type="button"
+          aria-haspopup="dialog"
+        >
+          <span class="adopt-label">
+            <strong> 我想領養 → </strong>
+          </span>
+          <svg
+            aria-hidden="true"
+            class="walk-scene"
+            viewbox="0 0 540 230"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <g class="home-shape" fill="currentColor">
+              <path
+                d="M431 122 L480 78 L529 122 L519 131 L519 196 L489 196 L489 154 L467 154 L467 196 L441 196 L441 131Z"
+              ></path>
+            </g>
+            <path
+              d="M10 205 Q120 194 230 205 T530 201"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="4"
+            ></path>
+            <g
+              class="walking-party"
+              fill="#fff9e9"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="4"
+            >
+              <g class="walker-person">
+                <g class="person-leg leg-a">
+                  <path
+                    d="M135 131 L121 165 L101 191 L114 201 L142 172 L155 141"
+                  ></path>
+                </g>
+                <g class="person-leg leg-b">
+                  <path
+                    d="M147 132 L159 168 L181 190 L170 201 L142 176 L130 141"
+                  ></path>
+                </g>
+                <path d="M130 80 L157 82 L163 132 Q145 144 124 130Z"></path>
+                <path
+                  d="M130 87 L113 117 L106 141 L113 144 L126 122 L138 104 M156 90 L175 113 L199 125 L204 118 L183 103 L167 83"
+                ></path>
+                <path d="M136 79 L138 64 M153 80 L150 64"></path>
+                <path d="M132 36 Q148 20 162 38 L159 58 Q145 75 131 58Z"></path>
+                <path
+                  d="M131 53 Q114 40 128 26 Q137 12 155 21 Q175 16 173 35 L160 46 L151 34 L140 45Z"
+                ></path>
+              </g>
+              <path
+                class="walking-leash"
+                d="M201 121 Q232 166 291 145"
+                fill="none"
+              ></path>
+              <g class="walking-dog">
+                <g class="dog-leg dog-leg-a">
+                  <path
+                    d="M270 168 L264 197 L274 199 L284 172 M313 166 L323 196 L333 196 L326 164"
+                  ></path>
+                </g>
+                <g class="dog-leg dog-leg-b">
+                  <path
+                    d="M281 168 L292 197 L303 197 L294 166 M322 165 L311 197 L321 199 L335 166"
+                  ></path>
+                </g>
+                <path
+                  d="M264 155 Q276 138 306 151 L321 132 L333 126 L347 132 L359 132 L358 144 L341 151 L334 172 Q300 183 270 174Z"
+                ></path>
+                <path
+                  d="M332 129 Q315 125 319 146 Q326 155 334 142"
+                  fill="currentColor"
+                ></path>
+                <circle cx="343" cy="135" fill="currentColor" r="2"></circle>
+                <path
+                  class="walking-tail"
+                  d="M269 155 Q244 148 246 127 Q229 155 266 167"
+                ></path>
+                <path d="M320 148 L337 155" stroke="#ef6133"></path>
+              </g>
+            </g>
+          </svg>
+        </button>
+
+        <details class="adoption-notice">
+          <summary>領養須知 ＋</summary>
+          <div>
+            <p>
+              領養前，請先確認家人共識、生活空間，以及長期照顧的時間與費用。
+            </p>
+            <p>
+              申請方式、資格與所需文件，請以實際送養單位公告為準；本頁流程為示意。
+            </p>
+          </div>
+        </details>
+      </section>
+    </main>
+    <footer>
+      <div class="contact-heading" style="background: transparent">
+        <span class="english"> CONTACT </span>
+        <span> 聯絡我們 </span>
+      </div>
+      <img
+        alt="鑽進洞裡的可愛狗狗"
+        class="footer-dog"
+        src="assets/footer-dog.png"
+      />
+      <div aria-label="社群聯絡方式" class="socials">
+        <button data-page="Facebook 連結">ⓕ Facebook</button>
+        <button data-page="Instagram 連結">◎ Instagram</button>
+        <button data-page="LINE 連結">LINE</button>
+        <button data-page="Email 地址">✉ Email</button>
+      </div>
+    </footer>
+    <dialog id="notice">
+      <p id="notice-text"></p>
+      <button id="close-notice">知道了</button>
+    </dialog>
+    <!-- 領養聯絡表單 -->
+    <dialog id="adoption-form-dialog" aria-labelledby="adoption-form-title">
+      <button
+        class="form-close"
+        id="close-adoption-form"
+        type="button"
+        aria-label="關閉表單"
+      >
+        ×
+      </button>
+
+      <h2 id="adoption-form-title">讓我們聯絡你</h2>
+      <p>留下聯絡方式，一起踏出回家的第一步。</p>
+
+      <form id="adoption-contact-form">
+        <label for="adopter-name">姓名 *</label>
+        <input
+          id="adopter-name"
+          name="name"
+          type="text"
+          autocomplete="name"
+          required
+        />
+
+        <label for="adopter-phone">聯絡電話 *</label>
+        <input
+          id="adopter-phone"
+          name="phone"
+          type="tel"
+          autocomplete="tel"
+          required
+        />
+
+        <label for="adopter-email">Email *</label>
+        <input
+          id="adopter-email"
+          name="email"
+          type="email"
+          autocomplete="email"
+          required
+        />
+
+        <label for="adopter-dog">想認識的狗狗</label>
+        <select id="adopter-dog" name="dog">
+          <option value="">還沒有決定</option>
+          <option>豆花</option>
+          <option>阿黑</option>
+          <option>奶茶</option>
+          <option>饅頭</option>
+          <option>芝麻</option>
+          <option>布丁</option>
+        </select>
+
+        <label for="adopter-message">想告訴我們的話</label>
+        <textarea
+          id="adopter-message"
+          name="message"
+          rows="4"
+          placeholder="例如：家中環境、養狗經驗或想詢問的問題"
+        ></textarea>
+
+        <p class="form-note"></p>
+
+        <button class="form-submit" type="submit">確認填寫</button>
+
+        <p id="adoption-form-result" role="status"></p>
+      </form>
+    </dialog>
+  </body>
+</html>

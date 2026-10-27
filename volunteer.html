@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>我要當志工｜狗等了</title>
+    <link href="style.css" rel="stylesheet" />
+    <link href="volunteer.css" rel="stylesheet" />
+    <script defer="" src="volunteer.js"></script>
+    <script defer="" src="tail.js"></script>
+    <style>
+      /* 移除第三項工作圓圈下方的直線 */
+      .volunteer-page .task:last-of-type .task-photo::after {
+        content: none !important;
+        display: none !important;
+      }
+    </style>
+  </head>
+  <body class="volunteer-page">
+    <header class="header">
+      <a aria-label="狗等了首頁" class="brand" href="index.html">
+        <img alt="狗等了" src="assets/logo.png" />
+      </a>
+      <nav aria-label="主選單">
+        <a class="english" href="index.html"> home </a>
+        <a href="dogs.html"> 認識狗狗 </a>
+        <a aria-current="page" href="volunteer.html"> 我要當志工 </a>
+        <a data-tail="adoption" href="adoption.html"> 領養資訊 </a>
+      </nav>
+    </header>
+    <main>
+      <section class="volunteer-hero">
+        <div class="hero-copy">
+          <h1>
+            我要當
+            <span> 志工 </span>
+          </h1>
+          <p>你的一點時間，變成牠開心的一天。</p>
+        </div>
+        <div
+          aria-label="開心搖尾巴的黑色唐狗"
+          class="volunteer-dog dog"
+          role="img"
+        >
+          <img alt="" class="body" src="assets/dog-body.png" />
+          <div
+            aria-label="摸摸尾巴，牠會搖得更快"
+            class="tail-area"
+            tabindex="0"
+          >
+            <img alt="" class="tail" src="assets/dog-tail.png" />
+          </div>
+        </div>
+      </section>
+      <section aria-labelledby="tasks-title" class="tasks">
+        <h2 class="section-title" id="tasks-title">志工日常工作</h2>
+        <article class="task" style="position: relative; left: 60px">
+          <div class="task-photo">
+            <span class="task-number"> 01 </span>
+            <img
+              alt="陪狗狗散步"
+              class="work-photo"
+              src="assets/volunteer-walk.png"
+            />
+            <img
+              alt=""
+              aria-hidden="true"
+              class="decoration flowers"
+              src="assets/flowers.png"
+            />
+          </div>
+          <div class="task-copy">
+            <h3>陪狗狗散步</h3>
+            <ul>
+              <li>戶外散步</li>
+              <li>互動陪伴</li>
+              <li>觀察與拍照</li>
+            </ul>
+          </div>
+        </article>
+        <article class="task" style="position: relative; left: 60px">
+          <div class="task-photo">
+            <span class="task-number"> 02 </span>
+            <img
+              alt="幫狗狗洗澡"
+              class="work-photo"
+              src="assets/volunteer-bath.png"
+            />
+            <img
+              alt=""
+              aria-hidden="true"
+              class="decoration shower"
+              src="assets/shower.png"
+            />
+            <img
+              alt=""
+              aria-hidden="true"
+              class="decoration broom"
+              src="assets/broom.png"
+            />
+          </div>
+          <div class="task-copy">
+            <h3>幫狗狗洗澡</h3>
+            <ul>
+              <li>洗澡與吹毛</li>
+              <li>簡單梳理</li>
+              <li>工作人員先示範</li>
+            </ul>
+          </div>
+        </article>
+        <article class="task" style="position: relative; left: 60px">
+          <div class="task-photo">
+            <span class="task-number"> 03 </span>
+            <img
+              alt="環境整理"
+              class="work-photo"
+              src="assets/volunteer-clean.png"
+            />
+            <img
+              alt=""
+              aria-hidden="true"
+              class="decoration bowl"
+              src="assets/bowl.png"
+            />
+            <img
+              alt=""
+              aria-hidden="true"
+              class="decoration food-bag"
+              src="assets/food-bag.png"
+            />
+          </div>
+          <div class="task-copy">
+            <h3>環境整理</h3>
+            <ul>
+              <li>整理休息空間</li>
+              <li>清洗水盆用品</li>
+              <li>協助準備飼料</li>
+            </ul>
+          </div>
+        </article>
+      </section>
+      <section aria-label="志工報名" class="booking">
+        <button
+          aria-controls="booking-panel"
+          aria-expanded="false"
+          id="booking-toggle"
+        >
+          預約時間
+          <span aria-hidden="true"> ＋ </span>
+        </button>
+        <p class="booking-hint"></p>
+        <div hidden="" id="booking-panel">
+          <h2>預約我的陪伴時間</h2>
+          <p>報名表尚未開放，服務時間與集合地點將於開放報名時公告。</p>
+        </div>
+      </section>
+      <section aria-labelledby="prepare-title" class="preparation">
+        <h2 id="prepare-title">參加前，先了解</h2>
+        <div class="preparation-grid">
+          <article class="preparation-card">
+            <span class="note-number"> 01 </span>
+            <h3>誰可以參加</h3>
+            <ul>
+              <li>喜歡狗狗</li>
+              <li>尊重狗狗的個性</li>
+              <li>不需要志工經驗</li>
+            </ul>
+          </article>
+          <article class="preparation-card">
+            <span class="note-number"> 02 </span>
+            <h3>出發前準備</h3>
+            <ul>
+              <li>方便活動的衣物鞋子</li>
+              <li>自備飲用水</li>
+              <li>防曬及防蚊用品</li>
+            </ul>
+          </article>
+          <article class="preparation-card">
+            <span class="note-number"> 03 </span>
+            <h3>現場配合</h3>
+            <ul>
+              <li>先聽取說明，再行動</li>
+              <li>依狗狗狀況安排</li>
+              <li>使用物品後歸位</li>
+            </ul>
+          </article>
+        </div>
+        <p class="note">實際參加規定依現場公告為準。</p>
+      </section>
+      <section class="faq">
+        <details>
+          <summary>常見問題</summary>
+          <div class="faq-content">
+            <h3>沒有志工經驗，也可以參加嗎？</h3>
+            <p>可以，不需要志工經驗；請先聽取說明，再依工作人員指引行動。</p>
+            <h3>出發前要準備什麼？</h3>
+            <p>穿著方便活動的衣物鞋子，自備飲用水、防曬及防蚊用品。</p>
+            <h3>可以自行挑選要陪伴的狗狗嗎？</h3>
+            <p>現場依狗狗狀況安排，請尊重牠們的個性並配合人員指導。</p>
+          </div>
+        </details>
+      </section>
+      <section aria-labelledby="memories-title" class="memories">
+        <h2 id="memories-title">
+          一起留下的日子
+          <span aria-hidden="true"> ♡ </span>
+        </h2>
+        <div class="carousel">
+          <button
+            aria-label="上一張活動照片"
+            class="carousel-arrow prev"
+            id="memory-prev"
+          >
+            ←
+          </button>
+          <div
+            aria-label="活動照片，可左右捲動"
+            class="memory-track"
+            id="memory-track"
+            tabindex="0"
+          >
+            <figure class="memory-card">
+              <img
+                alt="志工與黑狗互動的示意照片"
+                src="assets/volunteer-memory.png"
+              />
+              <figcaption>
+                陪伴的日常
+                <span> 01 </span>
+              </figcaption>
+            </figure>
+            <figure class="memory-card">
+              <img
+                alt="志工與黑狗互動的示意照片"
+                src="assets/volunteer-memory.png"
+              />
+              <figcaption>
+                陪伴的日常
+                <span> 02 </span>
+              </figcaption>
+            </figure>
+            <figure class="memory-card">
+              <img
+                alt="志工與黑狗互動的示意照片"
+                src="assets/volunteer-memory.png"
+              />
+              <figcaption>
+                陪伴的日常
+                <span> 03 </span>
+              </figcaption>
+            </figure>
+            <figure class="memory-card">
+              <img
+                alt="志工與黑狗互動的示意照片"
+                src="assets/volunteer-memory.png"
+              />
+              <figcaption>
+                陪伴的日常
+                <span> 04 </span>
+              </figcaption>
+            </figure>
+            <figure class="memory-card">
+              <img
+                alt="志工與黑狗互動的示意照片"
+                src="assets/volunteer-memory.png"
+              />
+              <figcaption>
+                陪伴的日常
+                <span> 05 </span>
+              </figcaption>
+            </figure>
+            <figure class="memory-card">
+              <img
+                alt="志工與黑狗互動的示意照片"
+                src="assets/volunteer-memory.png"
+              />
+              <figcaption>
+                陪伴的日常
+                <span> 06 </span>
+              </figcaption>
+            </figure>
+          </div>
+          <button
+            aria-label="下一張活動照片"
+            class="carousel-arrow next"
+            id="memory-next"
+          >
+            →
+          </button>
+        </div>
+        <p class="memory-caption"></p>
+      </section>
+    </main>
+    <footer>
+      <div class="contact-heading" style="background: transparent">
+        <span class="english"> CONTACT </span>
+        <span> 聯絡我們 </span>
+      </div>
+      <img
+        alt="鑽進洞裡的可愛狗狗"
+        class="footer-dog"
+        src="assets/footer-dog.png"
+      />
+      <div aria-label="社群聯絡方式" class="socials">
+        <button data-page="Facebook 連結">ⓕ Facebook</button>
+        <button data-page="Instagram 連結">◎ Instagram</button>
+        <button data-page="LINE 連結">LINE</button>
+        <button data-page="Email 地址">✉ Email</button>
+      </div>
+    </footer>
+    <dialog id="notice">
+      <p id="notice-text"></p>
+      <button id="close-notice">知道了</button>
+    </dialog>
+  </body>
+</html>

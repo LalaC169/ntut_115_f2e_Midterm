@@ -1,0 +1,613 @@
+/* =========================
+   頁面基本設定
+   ========================= */
+
+.dogs-page {
+  min-height: 1536px;
+}
+
+.dogs-page main {
+  padding-top: 120px;
+}
+
+/* =========================
+   頁面標題
+   ========================= */
+
+.dogs-heading {
+  text-align: center;
+  padding: 10px 20px 25px;
+}
+
+.dogs-heading h1 {
+  font-size: 64px;
+  letter-spacing: 8px;
+  margin: 0;
+}
+
+.dogs-heading h1::after {
+  display: none;
+}
+
+.dogs-heading p {
+  font-size: 25px;
+  letter-spacing: 3px;
+  margin: 10px 0 0;
+}
+
+.dogs-heading p::after {
+  content: "";
+  display: block;
+  width: 85px;
+  height: 6px;
+  margin: 15px auto 0;
+  border-radius: 50%;
+  background: var(--orange);
+  transform: rotate(-8deg);
+}
+
+/* =========================
+   資料夾
+   ========================= */
+
+.folder {
+  max-width: 1200px;
+  width: 97%;
+  margin: 0 auto;
+
+  position: relative;
+  top: -80px;
+  /* 正數向下，負數向上 */
+  left: 0px;
+  /* 正數向右，負數向左 */
+
+  background: url("assets/folder.png") center / 100% 100% no-repeat;
+
+  padding: 115px 6% 65px;
+  min-height: 1200px;
+}
+
+/* 「狗狗檔案」文字位置 */
+.folder h2 {
+  position: absolute;
+
+  left: 10%;
+  /* 增加向右，減少向左 */
+  top: 80px;
+  /* 增加向下，減少向上 */
+
+  font-size: 29px;
+  margin: 0;
+  letter-spacing: 3px;
+  font-weight: 450;
+}
+
+.folder h2 span {
+  font-size: 22px;
+}
+
+/* =========================
+   個性篩選按鈕
+   ========================= */
+
+.filters {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 0 0 34px;
+}
+
+.filters button {
+  border: 1px solid #7d7263;
+  border-radius: 30px;
+  padding: 6px 28px;
+  background: transparent;
+  font-size: 23px;
+
+  transition:
+    background 0.2s,
+    transform 0.2s;
+}
+
+.filters button[aria-pressed="true"],
+.filters button:hover {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: white;
+}
+
+.filters button:hover {
+  transform: scale(1.04);
+}
+
+/* =========================
+   狗狗卡片排列
+   ========================= */
+
+.dog-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px 22px;
+}
+
+.dog-card {
+  min-width: 0;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  background: #fff9e9e6;
+  border: 1px solid #efdcb3;
+  border-radius: 20px;
+
+  padding: 16px 17px 14px;
+  box-shadow: 0 3px 5px #8e63221a;
+}
+
+/* =========================
+   狗狗照片與腳印
+   ========================= */
+
+.dog-card > img {
+  width: 100%;
+  aspect-ratio: 1.48;
+
+  object-fit: cover;
+  object-position: center 40%;
+
+  border-radius: 10px;
+  display: block;
+}
+
+.paw {
+  position: absolute;
+  top: -6px;
+  left: 13px;
+  z-index: 1;
+
+  display: grid;
+  place-items: center;
+
+  background: #fffaeb;
+  border-radius: 7px;
+
+  width: 33px;
+  height: 34px;
+
+  transform: rotate(-10deg);
+  font-size: 23px;
+}
+
+/* =========================
+   名字、年齡、性別與體型
+   ========================= */
+
+.identity {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+
+  margin: 10px 0;
+}
+
+.identity h3 {
+  font-size: 30px;
+  line-height: 1;
+  margin: 0;
+  font-weight: 450;
+}
+
+.identity > span {
+  font-size: 16px;
+  white-space: nowrap;
+}
+
+/* =========================
+   個性標籤
+   ========================= */
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+
+.tags span {
+  background: #ffdd77;
+  border-radius: 25px;
+  padding: 4px 17px;
+  font-size: 17px;
+}
+
+/* =========================
+   狗狗資料
+   ========================= */
+
+.dog-card dl {
+  display: grid;
+  grid-template-columns: 84px 1fr;
+  gap: 12px 9px;
+
+  font-size: 17px;
+  line-height: 1.6;
+  margin: 20px 0 12px;
+}
+
+.dog-card dt {
+  border-right: 1px solid #e4b169;
+}
+
+.dog-card dd {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+/* =========================
+   領養狀態
+   ========================= */
+
+.status {
+  display: inline-block;
+  white-space: nowrap;
+
+  border: 1px solid #ff8b40;
+  border-radius: 25px;
+  background: #ffead0;
+  color: #f06400;
+
+  padding: 1px 11px;
+  line-height: 1.5;
+}
+
+/* 媒合中 */
+.status.matching {
+  border-color: #76a5ca;
+  background: #ddecfa;
+  color: #255a85;
+}
+
+/* =========================
+   「認識牠」按鈕
+   ========================= */
+
+.meet {
+  align-self: flex-end;
+  margin-top: auto;
+
+  background: none;
+  border: 0;
+  border-bottom: 1px solid var(--orange);
+
+  padding: 3px 0;
+  color: var(--orange);
+  font-size: 19px;
+}
+
+.meet:hover {
+  transform: translateX(3px);
+}
+
+/* =========================
+   頁碼與備註
+   ========================= */
+
+.page-bottom {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 30px;
+  min-height: 45px;
+}
+
+.page-number {
+  display: grid;
+  place-items: center;
+
+  width: 45px;
+  height: 45px;
+
+  border-radius: 50%;
+  background: var(--orange);
+  color: white;
+
+  font:
+    26px Candy,
+    sans-serif;
+}
+
+.page-bottom small {
+  position: absolute;
+  right: 0;
+
+  color: #8e816b;
+  font-size: 15px;
+}
+
+/* =========================
+   Footer 與導覽列
+   ========================= */
+
+.dogs-page footer {
+  margin-top: -12px;
+}
+
+.dogs-page nav [aria-current] {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: white;
+  text-decoration: none;
+}
+
+.text-link {
+  text-decoration: none;
+  display: inline-block;
+}
+
+/* =========================
+   螢幕閱讀器專用文字
+   ========================= */
+
+.sr-only {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* =========================
+   狗狗介紹視窗
+   ========================= */
+
+#dog-dialog {
+  width: 560px;
+  max-width: 92vw;
+  max-height: 88vh;
+
+  overflow: auto;
+  padding: 28px;
+}
+
+#dog-details > img {
+  width: 100%;
+  max-height: 330px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+#dog-details h2 {
+  font-size: 34px;
+  margin: 15px 0 8px;
+  font-weight: 450;
+}
+
+#dog-details p {
+  font-size: 20px;
+  line-height: 1.7;
+}
+
+.dialog-close {
+  position: absolute;
+  right: 12px;
+  top: 10px;
+  z-index: 2;
+
+  font: 28px Chiron;
+  background: #fff9e9 !important;
+  color: var(--brown) !important;
+
+  width: 42px;
+  height: 42px;
+  padding: 0 !important;
+}
+
+/* =========================
+   平板與小型螢幕：1000px 以下
+   ========================= */
+
+@media (max-width: 1000px) {
+  .folder {
+    padding: 250px 6% 65px;
+  }
+
+  .filters {
+    gap: 10px;
+  }
+
+  .filters button {
+    padding: 5px 20px;
+    font-size: 19px;
+  }
+
+  .identity h3 {
+    font-size: 26px;
+  }
+
+  .dog-card {
+    padding: 12px;
+  }
+
+  .dog-card dl {
+    grid-template-columns: 1fr;
+    gap: 5px;
+    font-size: 16px;
+  }
+
+  .dog-card dt {
+    border: 0;
+  }
+
+  .dog-card dd {
+    margin-bottom: 9px;
+  }
+
+  .tags span {
+    padding: 3px 10px;
+    font-size: 15px;
+  }
+
+  .dogs-heading h1 {
+    font-size: 52px;
+  }
+
+  .dogs-heading p {
+    font-size: 20px;
+  }
+}
+
+/* =========================
+   小平板與手機：700px 以下
+   ========================= */
+
+@media (max-width: 700px) {
+  .dog-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px 13px;
+  }
+
+  .folder {
+    min-height: 1350px;
+    padding-top: 110px;
+  }
+
+  .folder h2 {
+    font-size: 24px;
+    top: 40px;
+  }
+
+  .dogs-heading h1 {
+    font-size: 43px;
+  }
+
+  .dogs-heading p {
+    font-size: 17px;
+    letter-spacing: 1px;
+  }
+
+  .filters button {
+    font-size: 16px;
+    padding: 5px 14px;
+  }
+
+  .page-bottom small {
+    position: static;
+    margin-left: 20px;
+  }
+
+  .dogs-page main {
+    padding-top: 150px;
+  }
+}
+
+/* =========================
+   手機：440px 以下
+   ========================= */
+
+@media (max-width: 440px) {
+  .dog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .folder {
+    padding: 130px 10% 65px;
+    background-size: 100% 100%;
+  }
+
+  .folder h2 {
+    top: 55px;
+  }
+
+  .filters {
+    gap: 8px;
+    margin-bottom: 26px;
+  }
+
+  .dog-card > img {
+    aspect-ratio: 1.5;
+  }
+
+  .dog-card dl {
+    grid-template-columns: 82px 1fr;
+    gap: 12px 8px;
+  }
+
+  .dog-card dt {
+    border-right: 1px solid #e4b169;
+  }
+
+  .dog-card dd {
+    margin: 0;
+  }
+
+  .dogs-heading h1 {
+    font-size: 37px;
+  }
+
+  .dogs-heading p {
+    font-size: 15px;
+  }
+
+  .identity h3 {
+    font-size: 29px;
+  }
+
+  /* 調整篩選按鈕與卡片的上方空間 */
+  .dogs-page .folder {
+    padding-top: 250px;
+  }
+}
+
+/* 彈出卡片右下角的領養按鈕 */
+.dog-adopt-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 25px;
+}
+
+.dog-adopt-button {
+  display: inline-block;
+  padding: 12px 22px;
+  border-radius: 30px;
+  background: var(--orange);
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  transition: transform 0.2s;
+}
+
+.dog-adopt-button:hover {
+  transform: scale(1.05);
+}
+
+/* 篩選後即使卡片減少，頁碼仍留在資料夾底部 */
+.dogs-page .folder {
+  display: flex;
+  flex-direction: column;
+}
+
+.dogs-page .filters {
+  flex-shrink: 0;
+}
+
+.dogs-page .dog-grid {
+  flex: 1;
+  align-content: start;
+}
+
+.dogs-page .page-bottom {
+  flex-shrink: 0;
+  margin-top: 30px;
+}

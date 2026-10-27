@@ -1,0 +1,688 @@
+/* ===== 頁面與版面調整入口 ===== */
+.volunteer-page {
+  --hero-height: 440px;
+  --photo-size: 390px;
+  --task-gap: 35px;
+  min-height: 0;
+  background-image: url("assets/volunteer-background.png");
+  background-size: 100% 100%;
+}
+
+.volunteer-page main {
+  padding-top: 100px;
+}
+
+.volunteer-page nav [aria-current] {
+  color: white;
+  background: var(--orange);
+  border-color: var(--orange);
+  text-decoration: none;
+}
+
+.volunteer-page h1,
+.volunteer-page h2,
+.volunteer-page h3 {
+  font-weight: 450;
+}
+
+.volunteer-page ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* ===== 頁首標題與狗狗 ===== */
+.volunteer-hero {
+  position: relative;
+  max-width: 1200px;
+  height: var(--hero-height);
+  margin: auto;
+}
+
+.hero-copy {
+  position: absolute;
+  top: 75px;
+  left: 3%;
+  z-index: 3;
+}
+
+.hero-copy h1 {
+  font-size: 86px;
+  letter-spacing: 5px;
+  margin: 0;
+}
+
+.hero-copy h1::after {
+  display: none;
+}
+
+.hero-copy h1 span {
+  color: var(--orange);
+}
+
+.hero-copy p {
+  font-size: 23px;
+  margin: 12px 0;
+}
+
+.volunteer-dog.dog {
+  inset: 35px 3% auto auto;
+  width: 48%;
+  height: 380px;
+}
+
+.volunteer-dog .body {
+  top: -23%;
+}
+
+.volunteer-dog .tail-area {
+  top: -1%;
+}
+
+/* ===== 三項日常工作 ===== */
+.tasks {
+  max-width: 980px;
+  margin: auto;
+  padding: 0 30px;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 49px;
+  letter-spacing: 5px;
+  margin: 0 0 45px;
+}
+
+.task {
+  display: grid;
+  grid-template-columns: var(--photo-size) 1fr;
+  align-items: center;
+  gap: 70px;
+  margin: 0 35px var(--task-gap);
+}
+
+.task-photo {
+  position: relative;
+  width: var(--photo-size);
+  aspect-ratio: 1;
+}
+
+.task-photo::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  height: var(--task-gap);
+  border-left: 2px solid #38342c;
+  z-index: -1;
+}
+
+.task:last-child .task-photo::after {
+  height: 60px;
+}
+
+.work-photo {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 3px solid #34352c;
+  border-radius: 48% 51% 46% 49%;
+}
+
+.task-number {
+  position: absolute;
+  top: -15px;
+  left: -20px;
+  font:
+    80px Candy,
+    sans-serif;
+  color: var(--orange);
+  -webkit-text-stroke: 2px #201d18;
+  paint-order: stroke fill;
+  z-index: 2;
+}
+
+.task-copy h3 {
+  display: inline-block;
+  font-size: 38px;
+  margin: 0 0 15px;
+  position: relative;
+}
+
+.task-copy h3::after {
+  content: "";
+  position: absolute;
+  height: 13px;
+  background: #ffdb72;
+  border-radius: 15px;
+  left: -5px;
+  right: -7px;
+  bottom: 0;
+  z-index: -1;
+  transform: rotate(-1deg);
+}
+
+.task-copy li {
+  font-size: 24px;
+  line-height: 1.8;
+}
+
+.task-copy li::before {
+  content: "🐾";
+  font-size: 22px;
+  margin-right: 12px;
+}
+
+.decoration {
+  position: absolute;
+  object-fit: contain;
+  z-index: 2;
+  width: 110px;
+  height: 120px;
+  pointer-events: none;
+}
+
+.flowers {
+  bottom: -5px;
+  right: -35px;
+}
+
+.shower {
+  top: 0;
+  right: -25px;
+}
+
+.broom {
+  bottom: -40px;
+  right: -45px;
+}
+
+.bowl {
+  bottom: 25px;
+  left: -70px;
+}
+
+.food-bag {
+  bottom: -20px;
+  right: -45px;
+}
+
+/* ===== 預約展開區 ===== */
+.booking {
+  max-width: 820px;
+  margin: 50px auto 60px;
+  padding: 0 25px;
+  text-align: center;
+}
+
+#booking-toggle {
+  display: block;
+  width: 50%;
+  margin: auto;
+  padding: 18px 25px;
+  border: 0;
+  border-radius: 50px;
+  background: var(--orange);
+  color: white;
+  font-size: 28px;
+  transition: transform 0.2s;
+  position: relative;
+  left: 0px;
+  /* 負數向左，正數向右 */
+}
+
+#booking-toggle:hover {
+  transform: scale(1.03);
+}
+
+.booking-hint {
+  margin: 12px 0;
+  font-size: 18px;
+}
+
+#booking-panel {
+  background: #fff9e9;
+  border: 1px solid #e8bd77;
+  border-radius: 20px;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+#booking-panel p {
+  line-height: 1.8;
+  font-size: 19px;
+}
+
+/* ===== 參加須知 ===== */
+.preparation {
+  max-width: 1100px;
+  width: 90%;
+  border: 2px solid #454136;
+  border-radius: 75px;
+  margin: auto;
+  padding: 20px 25px 15px;
+}
+
+.preparation > h2 {
+  font-size: 38px;
+  text-align: center;
+  margin: -45px auto 15px;
+  background: #fcf7e8;
+  width: fit-content;
+  padding: 0 15px;
+}
+
+.preparation-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.preparation-card {
+  background: #ffe994c9;
+  border-radius: 45px;
+  padding: 18px 22px 22px;
+}
+
+.preparation-card:nth-child(2) {
+  background: #f7d9c1c9;
+}
+
+.note-number {
+  display: block;
+  text-align: center;
+  font:
+    49px Candy,
+    sans-serif;
+  color: #ffbd23;
+  -webkit-text-stroke: 1px #332515;
+}
+
+.preparation-card:nth-child(2) .note-number {
+  color: var(--orange);
+}
+
+.preparation-card h3 {
+  font-size: 27px;
+  text-align: center;
+  margin: 0 0 18px;
+}
+
+.preparation-card li {
+  font-size: 19px;
+  line-height: 1.9;
+  display: flex;
+  gap: 9px;
+  margin-bottom: 9px;
+}
+
+.preparation-card li::before {
+  content: "✓";
+  color: #715020;
+}
+
+.note {
+  text-align: center;
+  font-size: 17px;
+  margin: 15px 0 0;
+}
+
+/* ===== 常見問題 ===== */
+.faq {
+  max-width: 900px;
+  margin: 25px auto 50px;
+  padding: 0 25px;
+}
+
+.faq summary {
+  cursor: pointer;
+  list-style: none;
+  border: 3px solid var(--orange);
+  border-radius: 50px;
+  width: 330px;
+  max-width: 100%;
+  margin: auto;
+  padding: 5px 25px;
+  text-align: center;
+  font-size: 35px;
+}
+
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq summary::after {
+  content: " ＋";
+  color: var(--orange);
+}
+
+.faq details[open] summary::after {
+  content: " −";
+}
+
+.faq-content {
+  background: #fff9e9e6;
+  border: 1px solid #eddab0;
+  border-radius: 25px;
+  padding: 20px 30px;
+  margin-top: 20px;
+}
+
+.faq-content h3 {
+  font-size: 23px;
+}
+
+.faq-content p {
+  font-size: 19px;
+  line-height: 1.8;
+}
+
+/* ===== 活動照片輪播 ===== */
+.memories {
+  padding: 25px 0 45px;
+  overflow: hidden;
+  margin-top: 80px;
+  /* 數字越大，越往下 */
+}
+
+.memories h2 {
+  max-width: 1100px;
+  margin: 0 auto 40px;
+  padding: 0 30px;
+  font-size: 45px;
+  letter-spacing: 5px;
+  margin-top: -30px;
+  /* 數字越大，越往下 */
+}
+
+.memories h2 span {
+  color: var(--orange);
+  margin-left: 30px;
+}
+
+.carousel {
+  position: relative;
+}
+
+.memory-track {
+  display: flex;
+  gap: 22px;
+  padding: 20px 65px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.memory-track::-webkit-scrollbar {
+  display: none;
+}
+
+.memory-card {
+  flex: 0 0 270px;
+  background: #fffdf5;
+  padding: 10px 10px 15px;
+  margin: 0;
+  transform: rotate(-5deg);
+  scroll-snap-align: center;
+  box-shadow: 0 3px 8px #6b421c22;
+}
+
+.memory-card:nth-child(even) {
+  transform: rotate(6deg);
+}
+
+.memory-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  object-position: 60% center;
+}
+
+.memory-card figcaption {
+  font-size: 19px;
+  margin: 9px 3px 0;
+}
+
+.memory-card figcaption span {
+  float: right;
+  font-family: Candy, sans-serif;
+}
+
+.carousel-arrow {
+  position: absolute;
+  z-index: 3;
+  top: 40%;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: #fffdf5;
+  border: 0;
+  font-size: 32px;
+  box-shadow: 0 2px 5px #6b421c33;
+}
+
+.carousel-arrow:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.prev {
+  left: 20px;
+}
+
+.next {
+  right: 20px;
+}
+
+.memory-caption {
+  text-align: center;
+  font-size: 14px;
+  color: #856848;
+}
+
+.volunteer-page footer {
+  min-height: 250px;
+  margin-top: 20px;
+}
+
+.volunteer-page .contact-heading {
+  background: transparent;
+}
+
+/* ===== 平板 ===== */
+@media (max-width: 1000px) {
+  .volunteer-page {
+    --photo-size: 320px;
+  }
+
+  .hero-copy h1 {
+    font-size: 65px;
+  }
+
+  .hero-copy p {
+    font-size: 19px;
+  }
+
+  .task {
+    gap: 50px;
+    margin-left: 25px;
+    margin-right: 0;
+  }
+
+  .task-copy h3 {
+    font-size: 31px;
+  }
+
+  .task-copy li {
+    font-size: 21px;
+  }
+
+  .preparation-card {
+    padding: 16px;
+  }
+
+  .preparation-card h3 {
+    font-size: 23px;
+  }
+
+  .preparation-card li {
+    font-size: 17px;
+  }
+}
+
+/* ===== 手機 ===== */
+@media (max-width: 700px) {
+  .volunteer-page {
+    --hero-height: 380px;
+    --photo-size: 250px;
+  }
+
+  .volunteer-page main {
+    padding-top: 140px;
+  }
+
+  .hero-copy {
+    top: 25px;
+    left: 7%;
+  }
+
+  .hero-copy h1 {
+    font-size: 54px;
+  }
+
+  .hero-copy p {
+    font-size: 17px;
+  }
+
+  .volunteer-dog.dog {
+    top: 120px;
+    width: 60%;
+    height: 250px;
+  }
+
+  .section-title {
+    font-size: 34px;
+    letter-spacing: 2px;
+  }
+
+  .tasks {
+    padding: 0 22px;
+  }
+
+  .task {
+    gap: 25px;
+    margin-left: 15px;
+  }
+
+  .task-number {
+    font-size: 62px;
+  }
+
+  .task-copy h3 {
+    font-size: 25px;
+  }
+
+  .task-copy li {
+    font-size: 17px;
+  }
+
+  .task-copy li::before {
+    margin-right: 5px;
+    font-size: 16px;
+  }
+
+  .decoration {
+    width: 75px;
+    height: 85px;
+  }
+
+  .bowl {
+    left: -35px;
+  }
+
+  .broom,
+  .food-bag {
+    right: -20px;
+  }
+
+  #booking-toggle {
+    font-size: 23px;
+    width: 95%;
+  }
+
+  .preparation {
+    border-radius: 40px;
+    padding: 20px;
+  }
+
+  .preparation > h2 {
+    font-size: 28px;
+  }
+
+  .preparation-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .preparation-card {
+    border-radius: 28px;
+  }
+
+  .preparation-card ul {
+    margin: 10px auto;
+    width: fit-content;
+  }
+
+  .preparation-card h3 {
+    margin-bottom: 10px;
+  }
+
+  .memories h2 {
+    font-size: 31px;
+    letter-spacing: 2px;
+  }
+
+  .memory-card {
+    flex-basis: 230px;
+  }
+
+  .memory-card img {
+    height: 190px;
+  }
+}
+
+@media (max-width: 520px) {
+  .task {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 15px;
+    margin: 0 0 45px;
+  }
+
+  .task-photo::after {
+    display: none;
+  }
+
+  .task-copy {
+    width: 250px;
+  }
+
+  .task-copy h3 {
+    font-size: 29px;
+  }
+
+  .task-copy li {
+    font-size: 20px;
+  }
+
+  .task-copy ul {
+    margin-top: 0;
+  }
+
+  .booking {
+    margin-top: -10px;
+  }
+
+  .memories h2 span {
+    margin-left: 8px;
+  }
+}
